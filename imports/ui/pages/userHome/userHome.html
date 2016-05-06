@@ -1,0 +1,21 @@
+<div ng-cloak>
+  <div layout="column" layout-align="center center" layout-fill="layout-fill" class="profile-container">
+    <div layout="column" layout-align="center center">
+        <h1 class="profile-title">{{ userHome.user.profile.name }}</h1>
+        <img ng-src="{{userHome.user.profile.picture}}" class="profile-image" alt="Current user picture" />
+        <p class="profile-bio">{{ userHome.user.profile.bio }}</p>
+        <code class="profile-id">Meteor userId: {{ userHome.user._id }}</code>
+    </div>
+  </div>
+
+  <div class="recent-media-container">
+    <div layout="column" layout-align="center center">
+      <h2>Recent pictures</h2>
+    </div>
+    <div layout="row" layout-wrap>
+        <div ng-repeat="media in userHome.userMedias" flex="20" class="ig-image-container">
+            <img class="ig-image" ng-src="{{media.images.low_resolution.url}}">
+        </div>
+    </div>
+  </div>
+</div>
