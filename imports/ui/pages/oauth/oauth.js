@@ -34,13 +34,12 @@ class Oauth {
         this.call('createOrUpdateUser', user, (error, meteorUser) => {
             if(meteorUser){
                 // console.log(meteorUser); => {type: "instagram", userId: "smk5qGQp7SwExiKk9"}
-                this.setUserId(meteorUser.userId);
                 this.loginUser(meteorUser);
             }
             else if(error){
               console.log('Error creating or updating the user ', error);
             }
-        })
+        });
 
     }
 
@@ -56,17 +55,13 @@ class Oauth {
         else if(error){
           console.log('Error when logging the user in', error);
         }
-      })
+      });
 
     }
 
 
     setUserToken(token) {
         sessionStorage.setItem('ig-token', token);
-    }
-
-    setUserId(id) {
-      sessionStorage.setItem('userId', id);
     }
 
 }

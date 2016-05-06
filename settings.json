@@ -2,7 +2,7 @@
   "public": {
     "oAuth": {
       "instagram": {
-        "clientID": "YOUR CLIENT ID",
+        "clientID": "clientID",
         "redirectURI": "http://localhost:3000/_oauth"
       }
     }
@@ -10,8 +10,8 @@
   "private": {
     "oAuth": {
       "instagram": {
-        "clientID": "YOUR CLIENT ID",
-        "secret": "YOUR SECRET CLIENT ID",
+        "clientID": "clientID",
+        "secret": "secret",
         "redirectURI": "http://localhost:3000/_oauth",
         "accessTokenURI": "https://api.instagram.com/oauth/access_token"
       }

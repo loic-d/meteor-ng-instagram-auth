@@ -1,24 +1,32 @@
-# Authentication with Instagram using Meteor and AngularJS
+# Authentication in Angular-Meteor with Instagram
 
-Allows users to login with their Instagram account in a Angular-Meteor application.
+Allows users to login with their Instagram account in an Angular-Meteor application.
 
-* Work in progress... *
+## Features
+* Explicit OAuth authentication with Instagram
+* Creation of a Meteor user in the database with their Instagram profile information
+* Storage of the access token on the server and the client
+* Instagram data service to retrieve latest user's medias
 
-Flow:
-1. The user enters his Instagram credentials
-2. Instagram returns a unique code for the authentication request
-3. Meteor retrieves an access token using this code
-4. The returned access token is stored in session storage
-5. A new user is created in the DB with the Instagram user informations and the access token
-6. The user is logged in and redirected to the home page
+## Screenshots
+#### Login page
+![alt text](https://cloud.githubusercontent.com/assets/3925905/15115205/de82be8a-15cb-11e6-8d9c-acee044bdc86.png "Login page")
 
-* This application also provides a data service to retrieve the recent medias of the logged in user *
+#### User home page
+![alt text](https://cloud.githubusercontent.com/assets/3925905/15115204/de7d2ff6-15cb-11e6-87c7-7a2173337096.png "User home")
 
-Installation
-* If you don't already have Meteor, install it `curl https://install.meteor.com/ | sh`
+`console.log( Meteor.user() )`
+![alt text](https://cloud.githubusercontent.com/assets/3925905/15115507/45c68fc6-15cd-11e6-838a-2fa14e36bd67.png "Console when logging Meteor.user()")
+
+## Installation
+* Install Meteor `curl https://install.meteor.com/ | sh`
 * `git@github.com:loic-d/meteor-ng-instagram-auth.git`
 * `cd meteor-ng-instagram-auth`
 * `meteor npm install`
 * Update `clientID` and `secret` with your informations in `/settings.json`
 * `meteor --settings settings.json`
 * Go to `http://localhost:3000/`
+
+## TO DO
+* Intercept error responses from Instagram API
+* Avoid $timeout when using Meteor.user() in Angular userHome component

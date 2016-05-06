@@ -29,9 +29,7 @@ export default angular.module(name, [
 function config($locationProvider, $mdThemingProvider) {
     'ngInject';
     $locationProvider.html5Mode(true);
-
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
       .accentPalette('blue');
-
 }

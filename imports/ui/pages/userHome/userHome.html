@@ -5,9 +5,9 @@
         <img ng-src="{{userHome.user.profile.picture}}" class="profile-image" alt="Current user picture" />
         <p class="profile-bio">{{ userHome.user.profile.bio }}</p>
         <code class="profile-id">Meteor userId: {{ userHome.user._id }}</code>
+        <md-button ng-click="userHome.logout()">Logout</md-button>
     </div>
   </div>
-
   <div class="recent-media-container">
     <div layout="column" layout-align="center center">
       <h2>Recent pictures</h2>

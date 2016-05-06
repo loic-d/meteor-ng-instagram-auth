@@ -7,9 +7,17 @@ import './home.html';
 import { name as InstagramLoginButton } from '../../components/instagramLoginButton/instagramLoginButton';
 
 class Home {
-    constructor($scope, $reactive) {
+    constructor($scope, $reactive, $location) {
         'ngInject';
         $reactive(this).attach($scope);
+
+        if(this.userLoggedIn()){
+          $location.path('/home');
+        }
+    }
+
+    userLoggedIn() {
+      return sessionStorage.getItem('ig-token') !== null ? true : false;
     }
 }
 

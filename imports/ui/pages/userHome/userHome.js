@@ -6,12 +6,17 @@ import './userHome.html';
 import { name as instagramDataServiceModule } from '../../../services/instagramDataService';
 
 class UserHome {
-    constructor($scope, $reactive, $timeout, instagramDataService) {
+    constructor($scope, $reactive, $location, $timeout, instagramDataService) {
         'ngInject';
         $reactive(this).attach($scope);
 
+        if(!this.userLoggedIn()){
+           $location.path('/');
+        }
+
         this.user = {};
         this._$timeout = $timeout;
+        this._$location = $location;
         this.userMedias = {};
 
         instagramDataService.getRecentUserMedias((medias) => {
@@ -27,6 +32,16 @@ class UserHome {
       this._$timeout(() => {
         this.user = Meteor.user();
       }, 1000);
+    }
+
+    userLoggedIn() {
+      return sessionStorage.getItem('ig-token') !== null ? true : false;
+    }
+
+    logout() {
+      sessionStorage.removeItem('ig-token');
+      Meteor.logout();
+      this._$location.path('/');
     }
 
 }
