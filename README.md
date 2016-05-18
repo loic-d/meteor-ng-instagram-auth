@@ -19,7 +19,7 @@ Allow users to login with their Instagram account in an Angular-Meteor applicati
 
 ## Installation
 * Install Meteor `curl https://install.meteor.com/ | sh`
-* `git@github.com:loic-d/meteor-ng-instagram-auth.git`
+* `git clone git@github.com:loic-d/meteor-ng-instagram-auth.git`
 * `cd meteor-ng-instagram-auth`
 * `meteor npm install`
 * Update `clientID` and `secret` with your informations in `/settings.json`
