@@ -5,7 +5,7 @@ Allow users to login with their Instagram account in an Angular-Meteor applicati
 ## Features
 * Explicit OAuth authentication with Instagram
 * Creation of a Meteor user in the database with their Instagram profile information
-* Instagram data service to retrieve latest user's medias
+* Instagram data service to retrieve latest user's media
 
 ## Screenshots
 #### Login page
