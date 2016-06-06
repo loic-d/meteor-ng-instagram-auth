@@ -14,6 +14,7 @@ Allow users to login with their Instagram account in an Angular-Meteor applicati
 #### User home page
 ![alt text](https://cloud.githubusercontent.com/assets/3925905/15115204/de7d2ff6-15cb-11e6-87c7-7a2173337096.png "User home")
 
+## Console output
 `console.log( Meteor.user() )`
 ![alt text](https://cloud.githubusercontent.com/assets/3925905/15115507/45c68fc6-15cd-11e6-838a-2fa14e36bd67.png "Console when logging Meteor.user()")
 
