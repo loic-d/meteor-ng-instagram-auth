@@ -7,7 +7,7 @@ export default angular.module(name, [
     angularMeteor,
     ]).factory('instagramDataService', ['$http', function($http) {
 
-        var token = sessionStorage.getItem('ig-token');
+        let token = sessionStorage.getItem('ig-token');
 
         return {
             getRecentUserMedias: function(callback){

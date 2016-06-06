@@ -14,11 +14,11 @@ class InstagramLoginButton {
 
     redirectToAuthorization() {
 
-        const IG_AUTH_URL = 'https://api.instagram.com/oauth/authorize/?'
-            + 'client_id=' + this.clientID
-            + '&redirect_uri=' + this.redirectURI
-            + '&response_type=code'
-            + '&scope=follower_list+basic';
+        const IG_AUTH_URL = `https://api.instagram.com/oauth/authorize/?`
+            + `client_id=${this.clientID}`
+            + `&redirect_uri=${this.redirectURI}`
+            + `&response_type=code`
+            + `&scope=follower_list+basic`;
 
         this._$window.location = IG_AUTH_URL;
     }
