@@ -14,10 +14,10 @@ Meteor.methods({
             };
         }
 
-        var config = ServiceConfiguration.configurations.findOne({service: 'instagram'});
+        const config = ServiceConfiguration.configurations.findOne({service: 'instagram'});
 
-        var requestObject = buildRequestParams(code, config);
-        var response;
+        const requestObject = buildRequestParams(code, config);
+        let response;
 
         try {
             response = HTTP.post(config.accessTokenURI, requestObject);
@@ -40,12 +40,12 @@ Meteor.methods({
     },
     createOrUpdateUser: function(response) {
 
-        var serviceData = {
+        const serviceData = {
             id: response.user.id,
             accessToken: response.access_token
         };
 
-        var options = {
+        const options = {
             profile: {
                 name: response.user.full_name,
                 bio: response.user.bio,
@@ -58,8 +58,8 @@ Meteor.methods({
     },
     loginUser: function(meteorUser) {
 
-      var userId = meteorUser.userId;
-      var stampedLoginToken = Accounts._generateStampedLoginToken();
+      const userId = meteorUser.userId;
+      const stampedLoginToken = Accounts._generateStampedLoginToken();
 
       Accounts._insertLoginToken(userId, stampedLoginToken);
 
