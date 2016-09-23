@@ -9,7 +9,7 @@ export default angular.module(name, [
     .factory('instagramDataService', ['$http', function($http) {
         let token = sessionStorage.getItem('ig-token');
         return {
-            getRecentUserMedias: function(callback){
+            getRecentUserMedia: function(callback){
                 const endpoint = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${token}&callback=JSON_CALLBACK`;
                 $http.jsonp(endpoint).success(function(response){
                     callback(response.data);

@@ -20,7 +20,7 @@ class UserHome {
         this._$location = $location;
         this.userMedia = {};
 
-        instagramDataService.getRecentUserMedias((media) => {
+        instagramDataService.getRecentUserMedia((media) => {
             this.userMedia = media;
         });
 
