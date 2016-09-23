@@ -28,9 +28,10 @@ class InstagramLoginButton {
 const name = 'instagramLoginButton';
 
 export default angular.module(name, [
-    angularMeteor
-]).component(name, {
-    templateUrl: `imports/ui/components/${name}/${name}.html`,
-    controllerAs: name,
-    controller: InstagramLoginButton
-});
+        angularMeteor
+    ])
+    .component(name, {
+        templateUrl: `imports/ui/components/${name}/${name}.html`,
+        controllerAs: name,
+        controller: InstagramLoginButton
+    });

@@ -7,6 +7,7 @@ import './home.html';
 import { name as InstagramLoginButton } from '../../components/instagramLoginButton/instagramLoginButton';
 
 class Home {
+
     constructor($scope, $reactive, $location) {
         'ngInject';
         $reactive(this).attach($scope);
@@ -19,15 +20,17 @@ class Home {
     userLoggedIn() {
       return sessionStorage.getItem('ig-token') !== null ? true : false;
     }
+
 }
 
 const name = 'home';
 
 export default angular.module(name, [
-    angularMeteor,
-    uiRouter,
-    InstagramLoginButton
-    ]).component(name, {
+        angularMeteor,
+        uiRouter,
+        InstagramLoginButton
+    ])
+    .component(name, {
         templateUrl: `imports/ui/pages/${name}/${name}.html`,
         controllerAs: name,
         controller: Home

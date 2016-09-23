@@ -13,13 +13,14 @@ class App {}
 const name = 'app';
 
 export default angular.module(name, [
-    angularMeteor,
-    uiRouter,
-    ngMaterial,
-    Home,
-    UserHome,
-    Oauth
-    ]).component(name, {
+        angularMeteor,
+        uiRouter,
+        ngMaterial,
+        Home,
+        UserHome,
+        Oauth
+    ])
+    .component(name, {
         templateUrl: `imports/ui/components/${name}/${name}.html`,
         controllerAs: name,
         controller: App

@@ -6,6 +6,7 @@ import './userHome.html';
 import { name as instagramDataServiceModule } from '../../../services/instagramDataService';
 
 class UserHome {
+
     constructor($scope, $reactive, $location, $timeout, instagramDataService) {
         'ngInject';
         $reactive(this).attach($scope);
@@ -17,10 +18,10 @@ class UserHome {
         this.user = {};
         this._$timeout = $timeout;
         this._$location = $location;
-        this.userMedias = {};
+        this.userMedia = {};
 
-        instagramDataService.getRecentUserMedias((medias) => {
-            this.userMedias = medias;
+        instagramDataService.getRecentUserMedias((media) => {
+            this.userMedia = media;
         });
 
         this.getLoggedInUser();
@@ -52,7 +53,8 @@ export default angular.module(name, [
         angularMeteor,
         uiRouter,
         instagramDataServiceModule
-    ]).component(name, {
+    ])
+    .component(name, {
         templateUrl: `imports/ui/pages/${name}/${name}.html`,
         controllerAs: name,
         controller: UserHome
